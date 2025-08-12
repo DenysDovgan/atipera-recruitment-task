@@ -30,10 +30,10 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
     implementation("org.slf4j:slf4j-api:2.0.17")
-
     testImplementation("org.wiremock.integrations:wiremock-spring-boot:3.10.0")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9")
+    implementation("org.apache.commons:commons-lang3:3.18.0")
 }
 
 tasks.withType<Test> {
