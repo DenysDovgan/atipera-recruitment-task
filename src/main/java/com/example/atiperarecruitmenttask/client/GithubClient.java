@@ -9,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClient;
 
 import java.util.List;
@@ -38,9 +37,8 @@ public class GithubClient {
                         }
                     })
                     .body(new ParameterizedTypeReference<>() {});
-        } catch (HttpClientErrorException.NotFound e) {
-            log.warn("GitHub user not found: {}", username);
-            throw new GithubUserNotFoundException(username);
+        } catch (GithubUserNotFoundException e) {
+            throw e;
         } catch (Exception e) {
             log.error("Error fetching repos for user: {}", username, e);
             throw new GithubClientException("Failed to fetch user repos from GitHub", e);
