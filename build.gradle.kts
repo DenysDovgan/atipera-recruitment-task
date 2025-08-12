@@ -32,6 +32,8 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     implementation("org.slf4j:slf4j-api:2.0.17")
+
+    testImplementation("org.wiremock.integrations:wiremock-spring-boot:3.10.0")
 }
 
 tasks.withType<Test> {

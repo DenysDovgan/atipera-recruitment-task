@@ -1,0 +1,4 @@
+[
+  { "name": "forked-repo", "fork": true, "owner": { "login": "denys" } },
+  { "name": "sample-repo", "fork": false, "owner": { "login": "denys" } }
+]
